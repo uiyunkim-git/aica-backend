@@ -1,18 +1,19 @@
+from flask import Flask, render_template
+from flask_sockets import Sockets
 import asyncio
+import websockets
+import pyaudio
+import json
 
+app = Flask(__name__)
+sockets = Sockets(app)
 
-async def call_api(message, result, delay=3):
-    print(message)
-    await asyncio.sleep(delay)
-    return result
+# Your existing audio streaming code goes here...
 
+# Flask route for the frontend
+@app.route('/')
+def index():
+    return render_template('index.html')
 
-async def main():
-    a, b = await asyncio.gather(
-        call_api('Calling API 1 ...', 100, 5),
-        call_api('Calling API 2 ...', 200, 2)
-    )
-    print(a, b)
-
-
-asyncio.run(main())
+if __name__ == "__main__":
+    app.run(debug=True)

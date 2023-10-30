@@ -12,7 +12,7 @@ from time import sleep
 from sys import platform
 # Note: you need to be using OpenAI Python v0.27.0 for the code below to work
 import openai
-openai.api_key = "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"
+openai.api_key = "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"
 import pyaudio
 p = pyaudio.PyAudio()
 
@@ -55,6 +55,7 @@ async def audio_stream(
                     "translated_text":translated_text, 
                     "target_language":target_language,
                     "elapsed_time":{
+                        "start_time":start_time,
                         "whisper":whisper_end_time-start_time,
                         "deepl":deepl_end_time-whisper_end_time
                     }})
@@ -64,6 +65,7 @@ async def audio_stream(
         print(e)
         pass
     finally:
+        audio_data_buffer.clear()
         connected_clients.remove(websocket)
 
 async def get_text(audio_data_buffer):
