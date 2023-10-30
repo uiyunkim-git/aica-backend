@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Audio Streaming</title>
+</head>
+<body>
+    <h1>Audio Streaming</h1>
+
+    <div id="json-data">
+        <p>Original Text: <span id="original-text"></span></p>
+        <p>Translated Text: <span id="translated-text"></span></p>
+        <p>Target Language: <span id="target-language"></span></p>
+        <p>Elapsed Time (Whisper): <span id="whisper-time"></span></p>
+        <p>Elapsed Time (Deepl): <span id="deepl-time"></span></p>
+    </div>
+
+    <button id="start-button">Start Streaming</button>
+
+    <script>
+        document.getElementById('start-button').addEventListener('click', function() {
+            // When the button is clicked, make an HTTP request to the server to initiate the audio streaming
+            fetch('/start-streaming')
+                .then(response => response.text())
+                .then(data => console.log(data));
+        });
+    </script>
+
+    <script>
+        function updateData() {
+            fetch('/get-json-data')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('original-text').textContent = data.original_text;
+                    document.getElementById('translated-text').textContent = data.translated_text;
+                    document.getElementById('target-language').textContent = data.target_language;
+                    document.getElementById('whisper-time').textContent = data.elapsed_time.whisper;
+                    document.getElementById('deepl-time').textContent = data.elapsed_time.deepl;
+                });
+        }
+
+        // Call updateData() periodically (e.g., every 1 second)
+        setInterval(updateData, 1000);
+    </script>
+</body>
+</html>
