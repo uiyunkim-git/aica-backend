@@ -51,14 +51,16 @@ async def audio_stream(
                 translated_text = translate_text(text, target_language)
                 deepl_end_time = time.time()
                 await websocket.send_json(
-                    ({"original_text": text,
-                    "translated_text":translated_text, 
-                    "target_language":target_language,
-                    "elapsed_time":{
-                        "start_time":start_time,
-                        "whisper":whisper_end_time-start_time,
-                        "deepl":deepl_end_time-whisper_end_time
-                    }})
+                    ({
+                        "original_text": text,
+                        "translated_text":translated_text, 
+                        "target_language":target_language,
+                        "elapsed_time":{
+                            "start_time":start_time,
+                            "whisper":whisper_end_time-start_time,
+                            "deepl":deepl_end_time-whisper_end_time
+                        }
+                        })
                 )
                 print("sent.")
     except Exception as e:
