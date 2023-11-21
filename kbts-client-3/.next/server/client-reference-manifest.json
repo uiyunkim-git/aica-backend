@@ -75,7 +75,7 @@
   },
   "edgeSSRModuleMapping": {},
   "clientModules": {
-    "/Users/uiyunkim/Documents/GitHub/aica-backend/kbts-client/node_modules/next/dist/client/components/app-router.js": {
+    "/Users/huik0/Desktop/projects/aica-backend/kbts-client-3/node_modules/next/dist/client/components/app-router.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/app-router.js",
       "name": "*",
       "chunks": [
@@ -83,7 +83,7 @@
       ],
       "async": false
     },
-    "/Users/uiyunkim/Documents/GitHub/aica-backend/kbts-client/node_modules/next/dist/esm/client/components/app-router.js": {
+    "/Users/huik0/Desktop/projects/aica-backend/kbts-client-3/node_modules/next/dist/esm/client/components/app-router.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/app-router.js",
       "name": "*",
       "chunks": [
@@ -91,7 +91,7 @@
       ],
       "async": false
     },
-    "/Users/uiyunkim/Documents/GitHub/aica-backend/kbts-client/node_modules/next/dist/client/components/error-boundary.js": {
+    "/Users/huik0/Desktop/projects/aica-backend/kbts-client-3/node_modules/next/dist/client/components/error-boundary.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
       "name": "*",
       "chunks": [
@@ -99,7 +99,7 @@
       ],
       "async": false
     },
-    "/Users/uiyunkim/Documents/GitHub/aica-backend/kbts-client/node_modules/next/dist/esm/client/components/error-boundary.js": {
+    "/Users/huik0/Desktop/projects/aica-backend/kbts-client-3/node_modules/next/dist/esm/client/components/error-boundary.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
       "name": "*",
       "chunks": [
@@ -107,7 +107,7 @@
       ],
       "async": false
     },
-    "/Users/uiyunkim/Documents/GitHub/aica-backend/kbts-client/node_modules/next/dist/client/components/redirect-boundary.js": {
+    "/Users/huik0/Desktop/projects/aica-backend/kbts-client-3/node_modules/next/dist/client/components/redirect-boundary.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/redirect-boundary.js",
       "name": "*",
       "chunks": [
@@ -115,7 +115,7 @@
       ],
       "async": false
     },
-    "/Users/uiyunkim/Documents/GitHub/aica-backend/kbts-client/node_modules/next/dist/esm/client/components/redirect-boundary.js": {
+    "/Users/huik0/Desktop/projects/aica-backend/kbts-client-3/node_modules/next/dist/esm/client/components/redirect-boundary.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/redirect-boundary.js",
       "name": "*",
       "chunks": [
@@ -123,7 +123,7 @@
       ],
       "async": false
     },
-    "/Users/uiyunkim/Documents/GitHub/aica-backend/kbts-client/node_modules/next/dist/client/components/router-reducer/fetch-server-response.js": {
+    "/Users/huik0/Desktop/projects/aica-backend/kbts-client-3/node_modules/next/dist/client/components/router-reducer/fetch-server-response.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/router-reducer/fetch-server-response.js",
       "name": "*",
       "chunks": [
@@ -131,7 +131,7 @@
       ],
       "async": false
     },
-    "/Users/uiyunkim/Documents/GitHub/aica-backend/kbts-client/node_modules/next/dist/esm/client/components/router-reducer/fetch-server-response.js": {
+    "/Users/huik0/Desktop/projects/aica-backend/kbts-client-3/node_modules/next/dist/esm/client/components/router-reducer/fetch-server-response.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/router-reducer/fetch-server-response.js",
       "name": "*",
       "chunks": [
@@ -139,7 +139,7 @@
       ],
       "async": false
     },
-    "/Users/uiyunkim/Documents/GitHub/aica-backend/kbts-client/node_modules/next/dist/shared/lib/app-router-context.js": {
+    "/Users/huik0/Desktop/projects/aica-backend/kbts-client-3/node_modules/next/dist/shared/lib/app-router-context.js": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/app-router-context.js",
       "name": "*",
       "chunks": [
@@ -147,7 +147,7 @@
       ],
       "async": false
     },
-    "/Users/uiyunkim/Documents/GitHub/aica-backend/kbts-client/node_modules/next/dist/esm/shared/lib/app-router-context.js": {
+    "/Users/huik0/Desktop/projects/aica-backend/kbts-client-3/node_modules/next/dist/esm/shared/lib/app-router-context.js": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/app-router-context.js",
       "name": "*",
       "chunks": [
@@ -155,7 +155,7 @@
       ],
       "async": false
     },
-    "/Users/uiyunkim/Documents/GitHub/aica-backend/kbts-client/node_modules/next/dist/shared/lib/hooks-client-context.js": {
+    "/Users/huik0/Desktop/projects/aica-backend/kbts-client-3/node_modules/next/dist/shared/lib/hooks-client-context.js": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/hooks-client-context.js",
       "name": "*",
       "chunks": [
@@ -163,7 +163,7 @@
       ],
       "async": false
     },
-    "/Users/uiyunkim/Documents/GitHub/aica-backend/kbts-client/node_modules/next/dist/esm/shared/lib/hooks-client-context.js": {
+    "/Users/huik0/Desktop/projects/aica-backend/kbts-client-3/node_modules/next/dist/esm/shared/lib/hooks-client-context.js": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/hooks-client-context.js",
       "name": "*",
       "chunks": [
@@ -171,7 +171,7 @@
       ],
       "async": false
     },
-    "/Users/uiyunkim/Documents/GitHub/aica-backend/kbts-client/node_modules/next/dist/shared/lib/server-inserted-html.js": {
+    "/Users/huik0/Desktop/projects/aica-backend/kbts-client-3/node_modules/next/dist/shared/lib/server-inserted-html.js": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/server-inserted-html.js",
       "name": "*",
       "chunks": [
@@ -179,7 +179,7 @@
       ],
       "async": false
     },
-    "/Users/uiyunkim/Documents/GitHub/aica-backend/kbts-client/node_modules/next/dist/esm/shared/lib/server-inserted-html.js": {
+    "/Users/huik0/Desktop/projects/aica-backend/kbts-client-3/node_modules/next/dist/esm/shared/lib/server-inserted-html.js": {
       "id": "(app-client)/./node_modules/next/dist/shared/lib/server-inserted-html.js",
       "name": "*",
       "chunks": [
@@ -187,7 +187,7 @@
       ],
       "async": false
     },
-    "/Users/uiyunkim/Documents/GitHub/aica-backend/kbts-client/node_modules/next/dist/client/components/layout-router.js": {
+    "/Users/huik0/Desktop/projects/aica-backend/kbts-client-3/node_modules/next/dist/client/components/layout-router.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/layout-router.js",
       "name": "*",
       "chunks": [
@@ -195,7 +195,7 @@
       ],
       "async": false
     },
-    "/Users/uiyunkim/Documents/GitHub/aica-backend/kbts-client/node_modules/next/dist/esm/client/components/layout-router.js": {
+    "/Users/huik0/Desktop/projects/aica-backend/kbts-client-3/node_modules/next/dist/esm/client/components/layout-router.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/layout-router.js",
       "name": "*",
       "chunks": [
@@ -203,7 +203,7 @@
       ],
       "async": false
     },
-    "/Users/uiyunkim/Documents/GitHub/aica-backend/kbts-client/node_modules/next/dist/client/components/render-from-template-context.js": {
+    "/Users/huik0/Desktop/projects/aica-backend/kbts-client-3/node_modules/next/dist/client/components/render-from-template-context.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/render-from-template-context.js",
       "name": "*",
       "chunks": [
@@ -211,7 +211,7 @@
       ],
       "async": false
     },
-    "/Users/uiyunkim/Documents/GitHub/aica-backend/kbts-client/node_modules/next/dist/esm/client/components/render-from-template-context.js": {
+    "/Users/huik0/Desktop/projects/aica-backend/kbts-client-3/node_modules/next/dist/esm/client/components/render-from-template-context.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/render-from-template-context.js",
       "name": "*",
       "chunks": [
@@ -219,7 +219,7 @@
       ],
       "async": false
     },
-    "/Users/uiyunkim/Documents/GitHub/aica-backend/kbts-client/node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js": {
+    "/Users/huik0/Desktop/projects/aica-backend/kbts-client-3/node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js",
       "name": "*",
       "chunks": [
@@ -227,7 +227,7 @@
       ],
       "async": false
     },
-    "/Users/uiyunkim/Documents/GitHub/aica-backend/kbts-client/node_modules/next/dist/esm/client/components/static-generation-searchparams-bailout-provider.js": {
+    "/Users/huik0/Desktop/projects/aica-backend/kbts-client-3/node_modules/next/dist/esm/client/components/static-generation-searchparams-bailout-provider.js": {
       "id": "(app-client)/./node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js",
       "name": "*",
       "chunks": [
@@ -235,7 +235,7 @@
       ],
       "async": false
     },
-    "/Users/uiyunkim/Documents/GitHub/aica-backend/kbts-client/src/utils/registry.tsx": {
+    "/Users/huik0/Desktop/projects/aica-backend/kbts-client-3/src/utils/registry.tsx": {
       "id": "(app-client)/./src/utils/registry.tsx",
       "name": "*",
       "chunks": [
@@ -243,7 +243,7 @@
       ],
       "async": false
     },
-    "/Users/uiyunkim/Documents/GitHub/aica-backend/kbts-client/src/app/page.tsx": {
+    "/Users/huik0/Desktop/projects/aica-backend/kbts-client-3/src/app/page.tsx": {
       "id": "(app-client)/./src/app/page.tsx",
       "name": "*",
       "chunks": [
@@ -253,16 +253,16 @@
     }
   },
   "entryCSSFiles": {
-    "/Users/uiyunkim/Documents/GitHub/aica-backend/kbts-client/src/app/layout": {
+    "/Users/huik0/Desktop/projects/aica-backend/kbts-client-3/src/app/layout": {
       "modules": [
-        "/Users/uiyunkim/Documents/GitHub/aica-backend/kbts-client/src/styles/globals.css",
-        "/Users/uiyunkim/Documents/GitHub/aica-backend/kbts-client/node_modules/next/font/google/target.css?{\"path\":\"src/app/layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}"
+        "/Users/huik0/Desktop/projects/aica-backend/kbts-client-3/src/styles/globals.css",
+        "/Users/huik0/Desktop/projects/aica-backend/kbts-client-3/node_modules/next/font/google/target.css?{\"path\":\"src/app/layout.tsx\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"]}],\"variableName\":\"inter\"}"
       ],
       "files": [
         "static/css/app/layout.css"
       ]
     },
-    "/Users/uiyunkim/Documents/GitHub/aica-backend/kbts-client/src/app/page": {
+    "/Users/huik0/Desktop/projects/aica-backend/kbts-client-3/src/app/page": {
       "modules": [],
       "files": []
     }
