@@ -23,7 +23,7 @@ export function Chat() {
             );
             return data;
         },
-        refetchInterval: 100,
+        refetchInterval: 500,
     });
 
     return (

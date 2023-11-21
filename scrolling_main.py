@@ -10,6 +10,7 @@ import wave
 import time
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+import json
 
 app = FastAPI()
 
@@ -30,10 +31,13 @@ app.add_middleware(
 )
 
 DEEPL_API_KEY = '54b2312e-e3e9-1334-418e-bbce189c4b90:fx'
-openai.api_key = "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"
+openai.api_key = "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"
 
 stt_buffer = ""
+stt_buffer_cropped = ""
 audio_data_buffer = []
+audio_data_buffer_crop = []
+translated_text = ""
 
 FORMAT = pyaudio.paInt16  # Audio format (16-bit PCM)
 CHANNELS = 1               # Number of audio channels (1 for mono, 2 for stereo)
@@ -48,9 +52,11 @@ def record():
 
         # start = end
         in_data_copy = in_data[:]
-        
+
         audio_data_buffer.extend(in_data_copy)
-        print(len(audio_data_buffer))
+        audio_data_buffer_crop.extend(in_data_copy)
+
+        # print(len(audio_data_buffer))
         # if len(audio_data_buffer) > 44100 * CHUNK *  1:
         #     audio_data_buffer = audio_data_buffer[len(audio_data_buffer) - 44100 * 200:]
         
@@ -79,10 +85,13 @@ def record():
 def speech_to_text():
     def stt_thread():
         global stt_buffer
+        global stt_buffer_cropped
         while True:
-            stt_buffer = get_text(audio_data_buffer)
-            # translated_text = translate_text(text, "EN")
+            stt_buffer = get_text()
             print("STT: ",stt_buffer)
+            print("FULL: ",stt_buffer_cropped + ' ' + stt_buffer)
+            
+            sleep(1.2)
 
     stt_thread = threading.Thread(target=stt_thread)
     stt_thread.start()
@@ -90,9 +99,11 @@ def speech_to_text():
 
 def translate():
     def translate_thread():
+        global translated_text
+        global stt_buffer_cropped
         global stt_buffer
         while True:
-            translated_text = translate_text(stt_buffer, "EN")
+            translated_text = translate_text(stt_buffer_cropped + ' ' + stt_buffer, "EN")
             print("Translate: ",translated_text)
 
     translate_thread = threading.Thread(target=translate_thread)
@@ -108,25 +119,32 @@ def transcribe():
             print(text,translated_text)
 
 
-def get_text(audio_data_buffer):
+def get_text():
+    global audio_data_buffer_crop
+    global stt_buffer_cropped
     try:
-
         with wave.open("temp.wav", 'wb') as wf:
             wf.setnchannels(1)
             wf.setsampwidth(p.get_sample_size(pyaudio.paInt16))
             wf.setframerate(RATE)
-            wf.writeframes(bytearray(audio_data_buffer))
+            wf.writeframes(bytearray(audio_data_buffer_crop))
             
         with open("temp.wav","rb") as f:
             response = openai.audio.transcriptions.create(
                 model="whisper-1",
                 file= f,
-                response_format="srt"
+                response_format="verbose_json"
             )
-        print(len(audio_data_buffer))
         text = response
-        sleep(1)
-        return text
+        if len(text.segments) >= 4:
+            end_timestamp = text.segments[len(text.segments) - 4]["end"]
+            buffer_size_to_delete = int(RATE * 2 * end_timestamp)
+            audio_data_buffer_crop = audio_data_buffer_crop[buffer_size_to_delete:]
+            for seg in text.segments[:len(text.segments) - 3]:
+                stt_buffer_cropped = stt_buffer_cropped + ' ' + seg["text"]
+
+        # return text.segments
+        return text.text
     except Exception as e:
         print(e)
         return e
@@ -142,7 +160,7 @@ def translate_text(text, target_language):
 
     translation_data = response.json()
     translations = translation_data.get('translations', [])
-    sleep(1)
+
     if translations:
         return translations[0].get('text', '')
     
@@ -163,14 +181,16 @@ def join_str_common_prefix_substring(str1, str2):
     return str1.strip(common_substring) +' '+ str2
 
 @app.get("/")
-def stt_buffer():
+def get_stt_buffer():
     global stt_buffer
+    global stt_buffer_cropped
+    global translated_text
     return {
             'data':
                 {
                     'original_text':stt_buffer,
-                    'translated_text':'lskdl',
-                    'third_text':'sdklds'
+                    'translated_text':translated_text,
+                    'third_text':stt_buffer_cropped + ' ' + stt_buffer
                 }
             }
 
@@ -180,4 +200,4 @@ def stt_buffer():
 record()
 time.sleep(2)
 speech_to_text()
-# translate()
+translate()
