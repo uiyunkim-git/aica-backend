@@ -1,0 +1,1 @@
+export { PluginLogo } from './PluginLogo';
