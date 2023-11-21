@@ -17,12 +17,12 @@ export function Chat() {
     const { isError, data } = useQuery<ResponseType>({
         queryKey: ['courseData'],
         queryFn: async () => {
-            const { data } = await fetch(`http://localhost:3000/api`).then(
+            const { data } = await fetch(`http://localhost:8000/`).then(
                 (res) => res.json(),
             );
             return data;
         },
-        refetchInterval: 1000,
+        refetchInterval: 100,
     });
 
     return (
