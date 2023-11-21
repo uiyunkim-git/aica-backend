@@ -9,6 +9,9 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 # Define parameters
+
+data_queue = Queue()
+
 sample_rate = 44100
 chunk_size = 1024
 
