@@ -119,9 +119,8 @@ def transcribe():
             print(text,translated_text)
 
 
+text_list = []
 def get_text():
-    global audio_data_buffer_crop
-    global stt_buffer_cropped
     try:
         with wave.open("temp.wav", 'wb') as wf:
             wf.setnchannels(1)
@@ -135,19 +134,34 @@ def get_text():
                 file= f,
                 response_format="verbose_json"
             )
+        max_seg = 3
         text = response
-        if len(text.segments) >= 4:
-            end_timestamp = text.segments[len(text.segments) - 4]["end"]
-            buffer_size_to_delete = int(RATE * 2 * end_timestamp)
-            audio_data_buffer_crop = audio_data_buffer_crop[buffer_size_to_delete:]
-            for seg in text.segments[:len(text.segments) - 3]:
-                stt_buffer_cropped = stt_buffer_cropped + ' ' + seg["text"]
+        seg_len = len(text.segments)
 
+        seg_delete_index = -1
+        if seg_len > max_seg:
+            text_list_tmp = [seg["text"] for seg in text.segments[0:-max_seg-1]]
+            for i in range(min(len(text_list), len(text_list_tmp))):
+                if text_list[i] == text_list_tmp[i]:
+                    seg_delete_index += 1
+                else:
+                    break
+            seg_delete(text, seg_delete_index)
+            text_list = text_list_tmp[seg_delete_index+1:]
         # return text.segments
         return text.text
     except Exception as e:
         print(e)
         return e
+    
+def seg_delete(text, index):
+    if index < 0:
+        return
+    end_timestamp = text.segments[index]["end"]
+    buffer_size_to_delete = int(RATE * 2 * end_timestamp)
+    audio_data_buffer_crop = audio_data_buffer_crop[buffer_size_to_delete:]
+    for i in range(index+1):
+        stt_buffer_cropped = stt_buffer_cropped + ' ' + text.segments[index]["text"]
 
 def translate_text(text, target_language):
     deepl_url = 'https://api-free.deepl.com/v2/translate'
